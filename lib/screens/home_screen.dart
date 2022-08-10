@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget{
         )
       ),
 
-
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, //SIRVE PARA MOVER EL FLOATING ACTION BUTTON!!!
       floatingActionButton: FloatingActionButton(
         child: const Icon(
           Icons.add
