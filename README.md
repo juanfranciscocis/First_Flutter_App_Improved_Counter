@@ -1,16 +1,17 @@
-# counter_app_first_app
+# Counter App
 
-A new Flutter project.
+My first Flutter project. This a improved version of the counter app that flutter launches.
 
-## Getting Started
+## How To Open The Project?
+1. Download and open all of the project file using a flutter compatible IDE.
+2. I recomend IntelliJ IDEA
+3. Run the app using the iOS emulator, android emulator or google chrome.
+4. Enjoy a improved version of the default app that flutter gives you when creating a new project.
 
-This project is a starting point for a Flutter application.
+## I'm looking your CV (Curriculum Vitae), where can I find useful info about this project?
+You can take a look at some images here:
+#### iOS app
+<img src = 'https://github.com/juanfranciscocis/First_Flutter_App_Improved_Counter/blob/8ac7bed0fed10f79d56da62f360dd54b6b452245/README%20IMAGES/Screen%20Shot%202022-08-10%20at%2011.28.16%20AM.png'/>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Web app (Google Chrome)
+<img src = 'https://github.com/juanfranciscocis/First_Flutter_App_Improved_Counter/blob/8ac7bed0fed10f79d56da62f360dd54b6b452245/README%20IMAGES/Screen%20Shot%202022-08-10%20at%2011.29.35%20AM.png'/>
