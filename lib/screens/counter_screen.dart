@@ -1,5 +1,7 @@
 
 //WIDGET PERSONALIZADO
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class CounterScreen extends StatefulWidget{ //WIDGET SIN ESTADO
@@ -15,6 +17,28 @@ class _CounterScreenState extends State<CounterScreen> {
 
   //COUNTER
   int counter = 0;
+  
+  //INCREASE 
+  void _increase(){
+    setState(() {
+      counter++;
+    });
+  }
+
+  //DECREASE
+  void _decrease(){
+    setState(() {
+      counter--;
+    });
+  }
+
+  //RESET
+  void _reset(){
+    setState(() {
+      counter = 0;
+    });
+  }
+
 
   //METODO PRINCIPAL DEL STATELESS WIDGET
   @override
@@ -47,47 +71,54 @@ class _CounterScreenState extends State<CounterScreen> {
       ),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, //SIRVE PARA MOVER EL FLOATING ACTION BUTTON!!!
-      floatingActionButton:
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FloatingActionButton(
-            child: const Icon(
-              Icons.exposure_plus_1
-            ),
-            onPressed: () {
-              counter++;
-              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
-            },),
-
-          const SizedBox(width: 50,), //Espacio entre los botones
-
-          FloatingActionButton(
-            child: const Icon(
-              Icons.refresh
-            ),
-            onPressed: () {
-              counter = 0;
-              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
-            },),
-
-
-          const SizedBox(width: 50,), //Espacio entre los botones
-
-
-          FloatingActionButton(
-            child: const Icon(
-                Icons.exposure_minus_1
-            ),
-            onPressed: () {
-              counter--;
-              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
-            },),
-
-        ],
-      ),
+      floatingActionButton:  CustomFloattingActions(increaseFunction: _increase, resetFunction: _reset, decreaseFunction: _decrease,),
     );
 
     //throw UnimplementedError(); //EN CASO DE QUE NO ENVIE NINGUN WIDGET -> NO TENGO EL RETURN
+  }
+}
+
+class CustomFloattingActions extends StatelessWidget {
+  
+  final Function increaseFunction;
+  final Function decreaseFunction;
+  final Function resetFunction;
+
+  const CustomFloattingActions({
+    Key? key, required this.increaseFunction, required this.decreaseFunction, required this.resetFunction,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children:  [
+        FloatingActionButton(
+          child:  Icon(
+            Icons.exposure_plus_1
+          ),
+          onPressed: ()=>increaseFunction()),
+
+        const SizedBox(width: 50,), //Espacio entre los botones
+
+        FloatingActionButton(
+          child: const Icon(
+            Icons.refresh
+          ),
+          onPressed: ()=>resetFunction()),
+
+
+        const SizedBox(width: 50,), //Espacio entre los botones
+
+
+        FloatingActionButton(
+          child: const Icon(
+              Icons.exposure_minus_1
+          ),
+          onPressed: ()=>decreaseFunction()),
+
+
+      ],
+    );
   }
 }
