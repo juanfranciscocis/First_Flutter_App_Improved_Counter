@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget{
       //https://api.flutter.dev/flutter/material/MaterialApp-class.html -> EXPLICACION DE LA CLASE PRINCIPAL
       debugShowCheckedModeBanner: false, //HACE QUE DESAPARESCA EL BANNER ROJO DE LA PANTALLA DEL EMULADOR ('DEBUG')
 
-        //home es el homeScreen principal!!!
+        // home es el homeScreen principal!!!
       home: HomeScreen() //importa home_screen.dart
 
 

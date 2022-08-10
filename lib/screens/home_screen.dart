@@ -9,10 +9,15 @@ class HomeScreen extends StatelessWidget{
   //METODO PRINCIPAL DEL STATELESS WIDGET
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return const Center(
+    //BuildContext es el arbol de widgets completo
+
+    return const Scaffold( //Lienzo donde pongo widgets
+      //backgroundColor: Colors.blue,
+      body: Center(
         child: Text('HomeScreen'),
+      ),
     );
+
     //throw UnimplementedError(); //EN CASO DE QUE NO ENVIE NINGUN WIDGET -> NO TENGO EL RETURN
   }
 
