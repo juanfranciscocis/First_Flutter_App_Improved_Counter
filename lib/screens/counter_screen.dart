@@ -40,23 +40,52 @@ class _CounterScreenState extends State<CounterScreen> {
           mainAxisAlignment:MainAxisAlignment.center, //Centro vertical
           crossAxisAlignment:CrossAxisAlignment.center,//Relativo al widget que esta mas grande!!!!, no me sirve
           children: <Widget> [ //Borro o no la constante debido a que no la requiero, necesito cambiar el font size
-            Text('Numero de Clicks',style: fontSize30,),
+            const Text('Numero de Clicks',style: fontSize30,),
             Text('$counter',style: fontSize30,),
           ],
         )
       ),
 
-      //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, //SIRVE PARA MOVER EL FLOATING ACTION BUTTON!!!
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.add
-        ),
-        onPressed: () {
-          counter++;
-          setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
-        },),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, //SIRVE PARA MOVER EL FLOATING ACTION BUTTON!!!
+      floatingActionButton:
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FloatingActionButton(
+            child: const Icon(
+              Icons.exposure_plus_1
+            ),
+            onPressed: () {
+              counter++;
+              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
+            },),
+
+          const SizedBox(width: 50,), //Espacio entre los botones
+
+          FloatingActionButton(
+            child: const Icon(
+              Icons.refresh
+            ),
+            onPressed: () {
+              counter = 0;
+              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
+            },),
 
 
+          const SizedBox(width: 50,), //Espacio entre los botones
+
+
+          FloatingActionButton(
+            child: const Icon(
+                Icons.exposure_minus_1
+            ),
+            onPressed: () {
+              counter--;
+              setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
+            },),
+
+        ],
+      ),
     );
 
     //throw UnimplementedError(); //EN CASO DE QUE NO ENVIE NINGUN WIDGET -> NO TENGO EL RETURN
