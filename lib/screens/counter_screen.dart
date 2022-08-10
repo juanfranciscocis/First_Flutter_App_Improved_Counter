@@ -2,13 +2,19 @@
 //WIDGET PERSONALIZADO
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget{ //WIDGET SIN ESTADO
-
-  //VARIABLE, PROPIEDAD!
-
-
+class CounterScreen extends StatefulWidget{ //WIDGET SIN ESTADO
   //CONSTRUCTOR DEL STATELESS WIDGET
-  const HomeScreen({Key? key}) : super(key: key);
+  const CounterScreen({Key? key}) : super(key: key);
+
+  //Estado, administra el estado del widget!!!
+  @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+class _CounterScreenState extends State<CounterScreen> {
+
+  //COUNTER
+  int counter = 0;
 
   //METODO PRINCIPAL DEL STATELESS WIDGET
   @override
@@ -16,9 +22,6 @@ class HomeScreen extends StatelessWidget{ //WIDGET SIN ESTADO
 
     //ESTILO DEL TEXTO
     const fontSize30 = TextStyle(fontSize: 30);
-
-    //COUNTER
-    int counter = 0;
 
 
 
@@ -28,7 +31,7 @@ class HomeScreen extends StatelessWidget{ //WIDGET SIN ESTADO
 
       //(https://docs.flutter.dev/development/ui/widgets/basics) -> widgets
       appBar: AppBar(
-        title: const Text('Home Screen'),
+        title: const Text('Counter Screen'),
         elevation: 10.0, //Sombra!
       ), //Requiere un Widget de tipo PrefferedSizeWidget!!!
       body: Center( //Centra horizontal
@@ -50,6 +53,7 @@ class HomeScreen extends StatelessWidget{ //WIDGET SIN ESTADO
         ),
         onPressed: () {
           counter++;
+          setState(() {});//FUNCION ANONIMA!, REDIBUJA LOS OBJETOS
         },),
 
 
@@ -57,6 +61,4 @@ class HomeScreen extends StatelessWidget{ //WIDGET SIN ESTADO
 
     //throw UnimplementedError(); //EN CASO DE QUE NO ENVIE NINGUN WIDGET -> NO TENGO EL RETURN
   }
-
-
 }

@@ -1,3 +1,4 @@
+import 'package:counter_app_first_app/screens/counter_screen.dart';
 import 'package:counter_app_first_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false, //HACE QUE DESAPARESCA EL BANNER ROJO DE LA PANTALLA DEL EMULADOR ('DEBUG')
 
         // home es el homeScreen principal!!!
-      home: HomeScreen() //importa home_screen.dart
+      //home: HomeScreen() //importa home_screen.dart
+      home: CounterScreen(),
 
 
     );
