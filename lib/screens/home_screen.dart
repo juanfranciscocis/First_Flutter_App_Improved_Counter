@@ -9,6 +9,11 @@ class HomeScreen extends StatelessWidget{
   //METODO PRINCIPAL DEL STATELESS WIDGET
   @override
   Widget build(BuildContext context) {
+
+    //ESTILO DEL TEXTO
+    const fontSize30 = TextStyle(fontSize: 30);
+
+
     //BuildContext es el arbol de widgets completo
     return  Scaffold( //Lienzo donde pongo widgets (https://api.flutter.dev/flutter/material/Scaffold-class.html)
       //backgroundColor: Colors.blue,
@@ -23,9 +28,9 @@ class HomeScreen extends StatelessWidget{
         child: Column(
           mainAxisAlignment:MainAxisAlignment.center, //Centro vertical
           crossAxisAlignment:CrossAxisAlignment.center,//Relativo al widget que esta mas grande!!!!, no me sirve
-          children: const <Widget> [
-            Text('Numero de Clicks'),
-            Text('10'),
+          children: const <Widget> [ //Borro o no la constante debido a que no la requiero, necesito cambiar el font size
+            Text('Numero de Clicks',style: fontSize30,),
+            Text('10',style: fontSize30,),
           ],
         )
       ),
