@@ -1,3 +1,4 @@
+import 'package:counter_app_first_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -14,13 +15,11 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return const MaterialApp( //WIDGET PRINCIPAL! LE DECIMOS QUE ES UN MATERIAL DESIGN APP -> COMO ESTO ES ESTATICO ENTONCES USO CONST
-      //https://api.flutter.dev/flutter/material/MaterialApp-class.html
+      //https://api.flutter.dev/flutter/material/MaterialApp-class.html -> EXPLICACION DE LA CLASE PRINCIPAL
+      debugShowCheckedModeBanner: false, //HACE QUE DESAPARESCA EL BANNER ROJO DE LA PANTALLA DEL EMULADOR ('DEBUG')
 
-      home: Center(
-        child: Text('Hola Mundo'),
-      ),
-
-
+        //home es el homeScreen principal!!!
+      home: HomeScreen() //importa home_screen.dart
 
 
     );
