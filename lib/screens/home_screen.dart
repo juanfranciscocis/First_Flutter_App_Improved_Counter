@@ -34,6 +34,17 @@ class HomeScreen extends StatelessWidget{
           ],
         )
       ),
+
+
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(
+          Icons.add
+        ),
+        onPressed: () {
+          print('hola');
+        },),
+
+
     );
 
     //throw UnimplementedError(); //EN CASO DE QUE NO ENVIE NINGUN WIDGET -> NO TENGO EL RETURN
